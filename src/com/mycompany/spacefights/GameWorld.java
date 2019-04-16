@@ -5,7 +5,7 @@
  * causes a change in the game world will call the method
  * notifyObservers to notify MapView and ScoreView to update.
  * @author Steven Tat 
- * @version 11.2.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights;
@@ -41,10 +41,10 @@ public class GameWorld extends Observable {
 		Alien kodos = new Alien(x, y, width, height);
 		Alien kang = new Alien(x, y, width, height);
 		Alien et = new Alien(x, y, width, height);
-		Astronaut neil = new Astronaut();
-		Astronaut will = new Astronaut();
-		Astronaut jack = new Astronaut();
-		Astronaut evan = new Astronaut();
+		Astronaut neil = new Astronaut(x, y, width, height);
+		Astronaut will = new Astronaut(x, y, width, height);
+		Astronaut jack = new Astronaut(x, y, width, height);
+		Astronaut evan = new Astronaut(x, y, width, height);
 		worldObjects.add(ship);
 		worldObjects.add(kodos);
 		worldObjects.add(kang);

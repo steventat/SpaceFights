@@ -5,7 +5,7 @@
  * they need to be able to move on their own.
  * 
  *  @author Steven Tat
- *  @version 10.5.17
+ *  @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;

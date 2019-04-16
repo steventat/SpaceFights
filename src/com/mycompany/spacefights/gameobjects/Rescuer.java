@@ -3,7 +3,7 @@
  * This class implements the methods in the Guided Interface to provide guidable movement that can
  * be utilized by objects that extend this class.
  * @author Steven Tat 
- * @version 10.5.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;

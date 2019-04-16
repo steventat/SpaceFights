@@ -2,7 +2,7 @@
  * The GameObject class is an abstract class that will be used by all of the different
  * objects specialized for this game. 
  * @author Steven Tat
- * @version 10.5.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;

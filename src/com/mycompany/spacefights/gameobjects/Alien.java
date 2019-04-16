@@ -4,7 +4,7 @@
  * multiple times during the game due to the collision effects this game will have.
  * 
  * @author Steven Tat
- * @version 10.5.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;
@@ -18,7 +18,8 @@ public class Alien extends Opponent {
 	private Random rnd = new Random();
 	
 	/**
-	 * A constructor used to initialize the object.
+	 * Creates an alien at a random location given origin, width, and height of GameWorld.
+	 * Initializes the location, color, direction, size, and speed of the object.
 	 * @param x - x coordinate of origin.
 	 * @param y - y coordinate of origin.
 	 * @param width - width of the GameWorld.

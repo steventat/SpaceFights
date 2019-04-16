@@ -4,7 +4,7 @@
  * , and it will feed those inputs into the GameWorld. This class will also start up a User Interface with buttons
  * and menus. 
  * @author Steven Tat
- * @version 11.2.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights;

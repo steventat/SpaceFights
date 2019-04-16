@@ -3,7 +3,7 @@
  * This object contains health that will influence the speed of the object within the game.
  * There is a given constant of 1 that is multiplied by the health to determine the speed.
  * @author Steven Tat
- * @version 10.5.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;
@@ -21,12 +21,16 @@ public class Astronaut extends Opponent implements ISelectable {
 	private boolean isSelected;
 	
 	/**
-	 * The constructor for the Astronaut. Initializes the
-	 * location, color, direction, size, and speed of the object.
+	 * Creates an astronaut at a random location given origin, width, and height of GameWorld.
+	 * Initializes the location, color, direction, size, and speed of the object.
+	 * @param x - x coordinate of origin.
+	 * @param y - y coordinate of origin.
+	 * @param width - width of the GameWorld.
+	 * @param height - length of the GameWorld.
 	 */
-	public Astronaut() {
-		this.setLocation(1024.0 * rnd.nextDouble(), 
-						768.0 * rnd.nextDouble());
+	public Astronaut(int x, int y, int width, int height) {
+		this.setLocation(x + (width - x) * rnd.nextDouble(),
+				y + (height - y) * rnd.nextDouble());
 		this.setSpeed(health * constant);
 		this.setColor(0, 0, 255);
 		this.setDirection(rnd.nextInt(360));

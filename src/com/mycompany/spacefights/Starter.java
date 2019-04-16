@@ -2,7 +2,7 @@
  * The Starter class is where the visual components of the game will be created.
  * 
  *  @author Steven Tat
- *  @version 10.5.17
+ *  @version %G%
  */
 
 package com.mycompany.spacefights;

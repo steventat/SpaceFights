@@ -5,7 +5,7 @@
  * be utilized by the GameWorld class and has a toString() method, so that the user
  * can quickly obtain the object's data values.
  * @author Steven Tat
- * @version 10.5.17
+ * @version %G%
  */
 
 package com.mycompany.spacefights.gameobjects;
