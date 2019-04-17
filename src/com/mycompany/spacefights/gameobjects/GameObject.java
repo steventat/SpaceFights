@@ -18,10 +18,10 @@ public abstract class GameObject implements IDrawable {
 	private int color;
 
 	// Ppt 14
-	public void draw(Graphics g, Point pCmpRelPrnt) {
+	/*public void draw(Graphics g, Point pCmpRelPrnt) {
 		g.setColor(color);
 		g.drawRect(pCmpRelPrnt.getX(), pCmpRelPrnt.getY(), 20, 40);
-	}
+	}*/
 
 	/**
 	 * Gets the size of the game object.

@@ -13,11 +13,34 @@ public class MapView extends Container implements Observer {
 
 	GameObjectCollection worldObjects = new GameObjectCollection();
 
+	private int minWidth;
+	private int minHeight;
+	private int maxWidth;
+	private int maxHeight;
+
 	/**
 	 * Draws the object onto the screen.
 	 * @param g
 	 */
 	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+
+		IIterator iterator = worldObjects.getIterator();
+		while (iterator.hasNext()) {
+			GameObject gObject = iterator.getNext();
+			if(gObject instanceof Opponent) {
+				Point pCmpRelPrnt = new Point(this.getX() + (int) gObject.getLocationX(), this.getY() + (int) gObject.getLocationY());
+				gObject.draw(g, pCmpRelPrnt);
+			}
+			else {
+				Point pCmpRelPrnt = new Point(this.getX() + (int) gObject.getLocationX(), this.getY() + (int) gObject.getLocationY());
+				gObject.draw(g, pCmpRelPrnt);
+			}
+		}
+	}
+
+	/*
 	public void paint(Graphics g) {
 		super.paint(g);
 
@@ -38,6 +61,7 @@ public class MapView extends Container implements Observer {
 			gObject.draw(g, pCmpRelPrnt);
 		}
 	}
+	 */
 
 
 	@Override
@@ -63,7 +87,12 @@ public class MapView extends Container implements Observer {
 
 
 	public MapView() {
-		System.out.println("Map Width: " + this.getWidth() +  ", Map Height: " + this.getHeight());
+		System.out.println("Map Width: " + this.getX() + " " + this.getWidth() +
+				", Map Height: " + this.getY() + " " + this.getHeight());
+		minWidth = this.getX();
+		minHeight = this.getY();
+		maxWidth = this.getWidth();
+		maxHeight = this.getHeight();
 	}
 
 	public MapView(Observable myModel) {

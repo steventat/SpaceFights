@@ -8,6 +8,9 @@
 
 package com.mycompany.spacefights.gameobjects;
 
+import com.codename1.ui.Graphics;
+import com.codename1.ui.geom.Point;
+
 public abstract class Rescuer extends GameObject implements Guided {
 	
 	/**
@@ -47,6 +50,11 @@ public abstract class Rescuer extends GameObject implements Guided {
 	 */
 	public void jump(double locX, double locY) {
 		this.setLocation(locX, locY);
+	}
+
+	public void draw(Graphics g, Point pCmpRelPrnt) {
+		g.setColor(this.getColor());
+		g.drawRect(pCmpRelPrnt.getX(), pCmpRelPrnt.getY(), 20, 40);
 	}
 
 }

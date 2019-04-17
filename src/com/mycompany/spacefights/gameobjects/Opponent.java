@@ -11,6 +11,8 @@
 package com.mycompany.spacefights.gameobjects;
 
 import java.util.Random;
+import com.codename1.ui.Graphics;
+import com.codename1.ui.geom.Point;
 
 public abstract class Opponent extends GameObject implements Moveable {
 	private int speed;
@@ -101,5 +103,10 @@ public abstract class Opponent extends GameObject implements Moveable {
 		deltaY = Math.sin(Math.toRadians(90-direction)) * speed;
 		this.setLocation(this.getLocationX() + deltaX, 
 						this.getLocationY() + deltaY);
+	}
+
+	public void draw(Graphics g, Point pCmpRelPrnt) {
+		g.setColor(this.getColor());
+		g.drawRect(pCmpRelPrnt.getX(), pCmpRelPrnt.getY(), 20, 40);
 	}
 }
