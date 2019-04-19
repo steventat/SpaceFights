@@ -8,8 +8,6 @@
 package com.mycompany.spacefights.gameobjects;
 
 import com.codename1.charts.util.ColorUtil;
-import com.codename1.ui.Graphics;
-import com.codename1.ui.geom.Point;
 
 public abstract class GameObject implements IDrawable {
 	private int size = 0;

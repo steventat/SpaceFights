@@ -13,13 +13,9 @@ public class MapView extends Container implements Observer {
 
 	GameObjectCollection worldObjects = new GameObjectCollection();
 
-	private int minWidth;
-	private int minHeight;
-	private int maxWidth;
-	private int maxHeight;
-
 	/**
-	 * Draws the object onto the screen.
+	 * Draws objects onto the screen. Will iterate through the collection of GameObjects and draw each one
+	 * at its individual location.  
 	 * @param g
 	 */
 	@Override
@@ -89,10 +85,6 @@ public class MapView extends Container implements Observer {
 	public MapView() {
 		System.out.println("Map Width: " + this.getX() + " " + this.getWidth() +
 				", Map Height: " + this.getY() + " " + this.getHeight());
-		minWidth = this.getX();
-		minHeight = this.getY();
-		maxWidth = this.getWidth();
-		maxHeight = this.getHeight();
 	}
 
 	public MapView(Observable myModel) {

@@ -33,8 +33,16 @@ public class GameWorld extends Observable {
 	private BGSound bgSound = new BGSound("weirdy126.wav");
 	private boolean bPause = false;
 
+	public GameWorld() {
+
+	}
+
 	/**
-	 * Creates the initial game objects
+	 * Creates the initial game objects within the given component size.
+	 * @param x  the x coordinate of the origin of component.
+	 * @param y  the y coordinate of the origin of component.
+	 * @param width  the width of the component.
+	 * @param height  the height of the component.
 	 */
 	public void init(int x, int y, int width, int height) {
 		Spaceship ship = Spaceship.getSpaceship();
