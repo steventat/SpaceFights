@@ -27,8 +27,8 @@ public class Alien extends Opponent {
 	 */
 	public Alien(int x, int y, int width, int height) {
 		this.setBounds(x, y, width, height);
-		this.setLocation(x + (width - x) * rnd.nextDouble(),
-						y + (height - y) * rnd.nextDouble());
+		this.setLocation(0 + (width - 0) * rnd.nextDouble(),
+						0 + (height - 0) * rnd.nextDouble());
 		this.setSize(rnd.nextInt(this.getMaxSize()- this.getMinSize())
 					+ this.getMinSize());
 		this.setSpeed(20 * constant);

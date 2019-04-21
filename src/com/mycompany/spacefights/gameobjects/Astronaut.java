@@ -30,8 +30,8 @@ public class Astronaut extends Opponent implements ISelectable {
 	 */
 	public Astronaut(int x, int y, int width, int height) {
 		this.setBounds(x, y, width, height);
-		this.setLocation(x + (width - x) * rnd.nextDouble(),
-				y + (height - y) * rnd.nextDouble());
+		this.setLocation(0 + (width - 0) * rnd.nextDouble(),
+				0 + (height - 0) * rnd.nextDouble());
 		this.setSpeed(health * constant);
 		this.setColor(0, 0, 255);
 		this.setDirection(rnd.nextInt(360));

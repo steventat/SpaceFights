@@ -26,9 +26,10 @@ public abstract class GameObject implements IDrawable {
 	}*/
 
 	public void setBounds(double minX, double minY, double maxX, double maxY) {
-		minWidth = minX;
+		System.out.println(minX + " " + minY + " " + maxX + " " + maxY);
+		minWidth = 0;
 		maxWidth = maxX;
-		minHeight = minY;
+		minHeight = 0;
 		maxHeight = maxY;
 	}
 
@@ -72,7 +73,7 @@ public abstract class GameObject implements IDrawable {
 	 * Given a new x-coordinate and y-coordinate, this method will set the
 	 * location of the object to these new coordinates as long as the object
 	 * is within the bounds. Returns true is object/s new location is in the GameWorld.
-	 * 
+	 *
 	 * @param newLocationX the new x-coordinate.
 	 * @param newLocationY the new y-coordinate.
 	 * @return withinBounds whether the object is in the bounds of the GameWorld.
