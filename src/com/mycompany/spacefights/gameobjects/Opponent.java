@@ -19,8 +19,6 @@ public abstract class Opponent extends GameObject implements Moveable {
 	private int direction;
 	private int maxSize = 50;
 	private int minSize = 20;
-	private double deltaX;
-	private double deltaY;
 	private Random rnd;
 	
 	/**
@@ -98,11 +96,12 @@ public abstract class Opponent extends GameObject implements Moveable {
 	 * The Math functions are used to calculate the change in distance
 	 * as well as reduce the double to on decimal.
 	 */
-	public void move() {
-		deltaX = Math.cos(Math.toRadians(90-direction)) * speed;
-		deltaY = Math.sin(Math.toRadians(90-direction)) * speed;
-		this.setLocation(this.getLocationX() + deltaX, 
-						this.getLocationY() + deltaY);
+	public void move(int timeMillis) {
+		double deltaX = Math.cos(Math.toRadians(90-direction)) * speed;
+		double deltaY = Math.sin(Math.toRadians(90-direction)) * speed;
+		double newX = this.getLocationX() + deltaX;
+		double newY = this.getLocationY() + deltaY;
+		this.setLocation(newX, newY);
 	}
 
 	public void draw(Graphics g, Point pCmpRelPrnt) {

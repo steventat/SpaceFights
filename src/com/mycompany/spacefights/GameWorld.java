@@ -32,6 +32,10 @@ public class GameWorld extends Observable {
 	private boolean soundState = false;
 	private BGSound bgSound = new BGSound("weirdy126.wav");
 	private boolean bPause = false;
+	private int minWidth;
+	private int minHeight;
+	private int maxWidth;
+	private int maxHeight;
 
 	public GameWorld() {
 
@@ -45,6 +49,10 @@ public class GameWorld extends Observable {
 	 * @param height  the height of the component.
 	 */
 	public void init(int x, int y, int width, int height) {
+		minWidth = x;
+		minHeight = y;
+		maxWidth = width;
+		maxHeight = height;
 		Spaceship ship = Spaceship.getSpaceship();
 		Alien kodos = new Alien(x, y, width, height);
 		Alien kang = new Alien(x, y, width, height);
@@ -493,7 +501,7 @@ public class GameWorld extends Observable {
 			for (int i = 0; i < worldObjects.size(); i++) {
 				if (worldObjects.elementAt(i) instanceof Moveable) {
 					Moveable mObj = (Moveable) worldObjects.elementAt(i);
-					mObj.move();
+					mObj.move(20);
 					// put statements to change direction if going OOB
 				}
 			}
