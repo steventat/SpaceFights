@@ -15,7 +15,7 @@ public class MapView extends Container implements Observer {
 
 	/**
 	 * Draws objects onto the screen. Will iterate through the collection of GameObjects and draw each one
-	 * at its individual location.  
+	 * at its individual location.
 	 * @param g
 	 */
 	@Override

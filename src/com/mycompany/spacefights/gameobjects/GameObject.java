@@ -14,12 +14,23 @@ public abstract class GameObject implements IDrawable {
 	private double locationX = 0;
 	private double locationY = 0;
 	private int color;
+	private double minWidth;
+	private double maxWidth;
+	private double minHeight;
+	private double maxHeight;
 
 	// Ppt 14
 	/*public void draw(Graphics g, Point pCmpRelPrnt) {
 		g.setColor(color);
 		g.drawRect(pCmpRelPrnt.getX(), pCmpRelPrnt.getY(), 20, 40);
 	}*/
+
+	public void setBounds(double minX, double minY, double maxX, double maxY) {
+		minWidth = minX;
+		maxWidth = maxX;
+		minHeight = minY;
+		maxHeight = maxY;
+	}
 
 	/**
 	 * Gets the size of the game object.
@@ -59,16 +70,25 @@ public abstract class GameObject implements IDrawable {
 
 	/**
 	 * Given a new x-coordinate and y-coordinate, this method will set the
-	 * location of the object to these new coordinates.
+	 * location of the object to these new coordinates as long as the object
+	 * is within the bounds. Returns true is object/s new location is in the GameWorld.
 	 * 
-	 * @param newLocationX
-	 *            - the new x-coordinate.
-	 * @param newLocationY
-	 *            - the new y-coordinate.
+	 * @param newLocationX the new x-coordinate.
+	 * @param newLocationY the new y-coordinate.
+	 * @return withinBounds whether the object is in the bounds of the GameWorld.
 	 */
-	public void setLocation(double newLocationX, double newLocationY) {
-		locationX = newLocationX;
-		locationY = newLocationY;
+	public boolean setLocation(double newLocationX, double newLocationY) {
+		boolean withinBounds = false;
+		if(newLocationX >= minWidth && newLocationX <= maxWidth &&
+				newLocationY >= minHeight && newLocationY <= maxHeight) {
+			withinBounds = true;
+		}
+
+		if(withinBounds) {
+			locationX = newLocationX;
+			locationY = newLocationY;
+		}
+		return withinBounds;
 	}
 
 	/**

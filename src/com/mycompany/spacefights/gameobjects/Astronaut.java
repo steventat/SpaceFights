@@ -29,6 +29,7 @@ public class Astronaut extends Opponent implements ISelectable {
 	 * @param height - length of the GameWorld.
 	 */
 	public Astronaut(int x, int y, int width, int height) {
+		this.setBounds(x, y, width, height);
 		this.setLocation(x + (width - x) * rnd.nextDouble(),
 				y + (height - y) * rnd.nextDouble());
 		this.setSpeed(health * constant);

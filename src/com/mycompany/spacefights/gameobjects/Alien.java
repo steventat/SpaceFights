@@ -26,6 +26,7 @@ public class Alien extends Opponent {
 	 * @param height - length of the GameWorld.
 	 */
 	public Alien(int x, int y, int width, int height) {
+		this.setBounds(x, y, width, height);
 		this.setLocation(x + (width - x) * rnd.nextDouble(),
 						y + (height - y) * rnd.nextDouble());
 		this.setSize(rnd.nextInt(this.getMaxSize()- this.getMinSize())

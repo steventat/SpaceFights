@@ -85,23 +85,31 @@ public abstract class Opponent extends GameObject implements Moveable {
 	public void changeDirection(int delta) {
 		direction = direction + delta;
 	}
-	
+
+	/**
+	 * Updates the direction of the object with a random angle between 0 and 180 degrees.
+	 */
 	public void updateDirection() {
 		rnd = new Random();
-		this.changeDirection(rnd.nextInt(5) - 3);
+		this.changeDirection(rnd.nextInt(180) - 0);
 	}
 	
 	/**
 	 * The opponent automatically moves when this method is called.
 	 * The Math functions are used to calculate the change in distance
-	 * as well as reduce the double to on decimal.
+	 * as well as reduce the double to on decimal. If the object reaches the bounds
+	 * of the GameWorld, then the object will change direction randomly.
 	 */
 	public void move(int timeMillis) {
 		double deltaX = Math.cos(Math.toRadians(90-direction)) * speed;
 		double deltaY = Math.sin(Math.toRadians(90-direction)) * speed;
 		double newX = this.getLocationX() + deltaX;
 		double newY = this.getLocationY() + deltaY;
-		this.setLocation(newX, newY);
+		boolean withinBounds = this.setLocation(newX, newY);
+
+		if(!withinBounds) {
+			updateDirection();
+		}
 	}
 
 	public void draw(Graphics g, Point pCmpRelPrnt) {
