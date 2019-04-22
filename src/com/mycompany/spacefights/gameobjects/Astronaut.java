@@ -15,7 +15,7 @@ import com.codename1.ui.geom.Point;
 
 public class Astronaut extends Opponent implements ISelectable {
 	
-	private int health = 10;
+	private int health = 5;
 	private int constant = 1;
 	private Random rnd = new Random();
 	private boolean isSelected;

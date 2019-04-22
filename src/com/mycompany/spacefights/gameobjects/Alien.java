@@ -57,7 +57,7 @@ public class Alien extends Opponent {
 		this.setLocation(locX, locY);
 		this.setSize(rnd.nextInt(this.getMaxSize()- this.getMinSize())
 					+ this.getMinSize());
-		this.setSpeed(5 * constant);
+		this.setSpeed(2 * constant);
 		this.setColor(0, 255, 0);
 		this.setDirection(rnd.nextInt(360));
 	}
